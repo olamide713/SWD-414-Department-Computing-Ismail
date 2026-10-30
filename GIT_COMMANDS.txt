@@ -1,0 +1,43 @@
+# Git command guide (run these in your project folder)
+
+# 1. Configure Git once on your computer
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# 2. Initialize and make the first commit
+git init
+git status
+git add .
+git commit -m "Initial website pages"
+
+# 3. Make a homepage improvement, save the file, then:
+git add index.html style.css
+git commit -m "Improve homepage content and design"
+
+# 4. Create a feature branch for the Contact Us page
+git branch -M main
+git switch -c contact-page
+# Create/edit contact.html, then:
+git add contact.html
+git commit -m "Add Contact Us page"
+
+# 5. Merge the branch into main
+git switch main
+git merge contact-page
+
+# 6. Create an empty GitHub repository (do not initialize it with a README),
+# then replace the URL below with your own repository URL:
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git push -u origin main
+
+# 7. Make a further update after pushing, commit and push it
+# Edit a page, then:
+git add .
+git commit -m "Update website content"
+git push
+
+# Useful evidence commands
+git status
+git log --oneline --graph --all
+git branch
+git remote -v
